@@ -68,7 +68,7 @@ const hotness = () => {
         const { firstname, lastname, adress, postalCode, birthday, gender } = person;
         return `Sehr ${gender} ${firstname} ${lastname}
          <br> geboren am ${birthday}
-          <br> ${adress}, ${postalCode}`;
+          <br> ${adress}, ${postalCode} <br>`;
     }
 
     const pizzaBestellung = (pizza) => {
@@ -77,4 +77,8 @@ const hotness = () => {
         <br> ${type} mit ${extras} and zusätzlich wollten Sie noch ${additional}
         <br> Vielen Dank für Ihre Bestellung`;
     }
+
+    function ausgabe() {
+        document.getElementById("id").innerHTML = adress(person) + pizzaBestellung(pizza);
+    };
 }
