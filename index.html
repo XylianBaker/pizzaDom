@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html lang="DE">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <script defer src="./app.js"></script>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Persönliche und Adressdaten</legend>
+        <div class="col1">
+            <!-- Adressdaten-->
+
+            <!-- Vorname -->
+            <label for="vname">Vorname</label>
+            <input type="text" name="vname" id="vname" value="" placeholder="Geben Sie hier Ihren Vornamen ein">
+            <br>
+
+            <!-- Nachname -->
+            <label for="nname">Nachname</label>
+            <input type="text" name="nname" id="nname" value="" placeholder="Geben Sie hier Ihren Nachnamen ein">
+            <br>
+
+            <!-- Adresse -->
+            <label for="adress">Adresse</label>
+            <input type="text" name="adress" id="adress" value="" placeholder="Geben Sie hier Ihre Adresse ein">
+            <br>
+
+            <!-- Postleitzahl -->
+            <label for="post">Postleitzahl</label>
+            <input type="number" name="post" id="post" value="" placeholder="Geben Sie hier Ihren Postleitzahl ein">
+        </div>
+
+        <div class="col2">
+            <!-- Persönliche Daten -->
+
+            <!-- Geburtstag -->
+            <label for="birthdate">Geburtsdatum</label>
+            <input type="date" name="birthdate" id="birthdate">
+            <br>
+
+            <!-- Geschlecht -->
+            <label>Geschlecht:</label>
+            <input type="radio" name="gender" id="radio" value="m">
+            <label for="radio">M</label>
+            <input type="radio" name="gender" id="radio" value="w">
+            <label for="radio">W</label>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Daten zur Pizza</legend>
+
+        <div class="col3">
+            <!-- Standardisierte Auswahl -->
+
+            <!-- Pizzenauswahl -->
+            <label for="pizzaType">Pizzenauswahl</label>
+            <select name="pizzaType" id="pizzaType">
+                <option value="margarita">Margarita</option>
+                <option value="hawaii">Hawaii</option>
+                <option value="salami">Salami</option>
+            </select>
+
+            <br>
+
+            <label for="topings">Extras</label>
+            <br>
+            <input type="checkbox" name="cheese" id="cheese">
+            <label for="cheese">Käse</label>
+
+            <input type="checkbox" name="tomato" id="tomato">
+            <label for="cheese">Tomaten</label>
+
+            <input type="checkbox" name="sauce" id="sauce">
+            <label for="cheese">Soße</label>
+
+            <br>
+
+            <input type="checkbox" name="ananas" id="ananas">
+            <label for="cheese">Ananas</label>
+
+            <input type="checkbox" name="egg" id="egg">
+            <label for="cheese">Ei</label>
+
+            <input type="checkbox" name="corn" id="corn">
+            <label for="cheese">Mais</label>
+
+            <br>
+
+            <label for="hotness">Schärfeslider</label>
+            <br>
+            <input type="range" name="hotness" id="hotness" value="0">
+            <br>
+            <input type="number" name="hotness" id="hotness" placeholder="schärfe">
+        </div>
+
+        <div class="col4">
+            <label for="">Zusatzwünsche</label>
+            <br>
+            <textarea name="wishes" id="wishes" cols="30" rows="5"></textarea>
+
+            <br>
+
+            <button type="submit">Bestellung Druckansicht</button>
+        </div>
+    </fieldset>
+</body>
+
+</html>

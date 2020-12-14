@@ -1,0 +1,97 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <!--Wir holen uns alle Funtkionen für den Slider und die Erstellung der Druckausgabe aus der externen Datei functions.js-->
+    <script src="functions.js"></script>
+
+</head>
+
+<body>
+    <!--Die Containerklasse bildet die gesamte Seite-->
+    <div class="container">
+        <fieldset>
+            <form name="bform" oninput="x.value=parseInt(notenfarbe.value);change_nf(x.value);">
+                <legend>Beurteilungsformular</legend>
+                <!--Die einzelnen Spalten innerhalb der Containerklasse-->
+                <div class="col1">
+                    <label for="nname">Nachname</label><input type="text" id="nname" name="nname" placeholder="Geben Sie hier Ihren Nachnamen ein"><br />
+                    <label for="vname">Vorname</label><input type="text" id="vname" name="vname" placeholder="Geben Sie hier Ihren Vornamen ein"><br />
+
+                    <br />
+
+                    <input type="checkbox" id="ordentlich" name="ordentlich"><label for="ordentlich">Hat regul&auml;r am Unterricht teilgenommen</label><br />
+                    <input type="checkbox" id="email" name="email"><label for="email">per Email benachrichtigen</label><br />
+
+                </div>
+                <!--Die einzelnen Spalten innerhalb der Containerklasse-->
+                <div class="col2">
+                    Klasse:
+                    <select id="klasse" name="klasse">
+					<option value="2ahit">2 AHIT</option>
+					<option value="2bhit">2 BHIT</option>
+					<option value="2chit">2 CHIT</option>
+					<option value="2dhit">2 DHIT</option>
+				</select><br /> Geschlecht:
+
+                    <br />
+                    <input type="radio" id="radio" name="geschl" value="m"><label for="radio">m</label><br />
+                    <input type="radio" id="radio" name="geschl" value="w"><label for="radio">w</label><br />
+
+
+
+
+
+                </div>
+                <br />
+
+
+                <div class="slider">
+
+                    <!--Notenbalken DIV
+			Hier wird dann der Farbbalken erstellt-->
+                    <br />
+                    <div id="nb">
+                        &nbsp;Hallo
+                    </div>
+                    <br />
+
+
+                    <!--Notenbalken
+			oninput ist ein Event, dass wie der Name schon sagt bei einer Eingabe aufgerufen wird
+			in -->
+
+                    Farbbalken:<br />
+                    <input type="range" id="notenfarbe" value="50">
+                    <output name="x" id="x" for="notenfarbe">50</output>
+
+
+                    <!--Notenfarbe-->
+                    <br />
+                    <input type="number" name="nf" id="nf" min="1" max="100" onchange="change_nf(this.value);">
+
+
+                    <br />
+                    <input type="button" name="druckausgabe" value="Druckfenster erstellen" onclick="createPrintscreen();">
+                </div>
+
+            </form>
+        </fieldset>
+
+        <br /><br />
+
+        <div id="printscreen_div">
+            Druckausgabe
+
+        </div>
+
+    </div>
+
+
+
+
+</body>
+
+</html>
