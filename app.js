@@ -3,19 +3,24 @@ const gender = (gender) => gender == 'm' ? 'geehrter Herr 🤵' : ' geehrte Frau
 
 // Extra Zutaten fuer die Pizza 🍅
 const toping = () => {
-    const cheese = document.querySelector('#cheese') ? 'Käse' : '';
-    const tomato = document.querySelector('#tomato') ? 'Tomaten' : '';
-    const sauce = document.querySelector('#sauce') ? 'extra Soße' : '';
-    const ananas = document.querySelector('#ananas') ? 'Ananas' : '';
-    const egg = document.querySelector('#egg') ? 'Ei' : '';
-    const corn = document.querySelector('#corn') ? 'Mais' : '';
+    const cheese = document.querySelector('#cheese:checked') ? 'Käse' : '';
+    const tomato = document.querySelector('#tomato:checked') ? 'Tomaten' : '';
+    const sauce = document.querySelector('#sauce:checked') ? 'extra Soße' : '';
+    const ananas = document.querySelector('#ananas:checked') ? 'Ananas' : '';
+    const egg = document.querySelector('#egg:checked') ? 'Ei' : '';
+    const corn = document.querySelector('#corn:checked') ? 'Mais' : '';
 
     const tp = [cheese, tomato, sauce, ananas, egg, corn];
     let out = '';
 
     for (const iterator of tp) {
-        out += iterator + ', ';
+        if (iterator != '') {
+            out += iterator + ', ';
+        }
     }
+
+    out = out.slice(0, out.length - 2);
+
     return out;
 };
 
@@ -102,6 +107,6 @@ function output() {
     pizza.hotness = hotness();
     pizza.additional = document.getElementById("wishes").value;
 
-    // 🔙
+    // Out 🔙
     document.getElementById("out").innerHTML = address(person) + pizzaBestellung(pizza);
 };

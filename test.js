@@ -2,22 +2,28 @@
 const gender = (gender) => gender == 'm' ? 'geehrter Herr' : ' geehrte Frau';
 
 // Extra Zutaten fuer die Pizza 🍅
-const toping = () => {
-    const cheese = document.querySelector('#cheese') ? 'Käse' : '';
-    const tomato = document.querySelector('#tomato') ? 'Tomaten' : '';
-    const sauce = document.querySelector('#sauce') ? 'extra Soße' : '';
-    const ananas = document.querySelector('#ananas') ? 'Ananas' : '';
-    const egg = document.querySelector('#egg') ? 'Ei' : '';
-    const corn = document.querySelector('#corn') ? 'Mais' : '';
+(function toping() {
+    const cheese = 'cheese';
+    const tomato = '';
+    const sauce = 'sauce';
+    const ananas = '';
+    const egg = 'egg';
+    const corn = 'corn';
 
     const tp = [cheese, tomato, sauce, ananas, egg, corn];
     let out = '';
 
     for (const iterator of tp) {
-        out += iterator + ', ';
+        if (iterator != '') {
+            out += iterator + ', ';
+        }
     }
-    return out;
-};
+
+    out = out.slice(0, out.length - 2);
+
+    console.log(out);
+    console.log(tp.length);
+})();
 
 // Schaerfe der Pizza 🥵
 const hotness = () => {
