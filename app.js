@@ -1,20 +1,20 @@
 const person = {
     firstname: document.getElementById("vname"),
     lastname: document.getElementById("nname"),
-    address: document.getElementById("adress"),
+    adress: document.getElementById("adress"),
     postalCode: document.getElementById("post"),
     birthday: document.getElementById("birthday"),
     gender: adress()
 }
 
 const pizza = {
-    type: "",
+    type: document.getElementById("pizzaType"),
     hotness: hotness(),
     extras: toping(),
-    additional: ""
+    additional: document.getElementById("wishes")
 }
 
-const adress = () => document.getElementById("gender") == 'm' ? 'Herr' : 'Frau';
+const adress = () => document.getElementById("gender") == 'm' ? 'geehrter Herr' : ' geehrte Frau';
 
 const toping = () => {
     const cheese = document.querySelector('#cheese') ? 'Käse' : '';
@@ -50,20 +50,31 @@ const hotness = () => {
         document.getElementById("nb").style.backgroundColor = "#00ff00";
         farbe = "#00ff00";
         return 'tödlich scharf';
-    }
-    if (ht > 3 && ht < 2) {
+    } else if (ht > 3 && ht < 2) {
         document.getElementById("nb").style.backgroundColor = "#ffff00";
         farbe = "#ffff00";
         return 'scharf';
-    }
-    if (ht > 1 && ht < 2) {
+    } else if (ht > 1 && ht < 2) {
         document.getElementById("nb").style.backgroundColor = "#ff8000";
         farbe = "#ff8000";
         return 'relativ scharf';
-    }
-    if (ht < 1) {
+    } else if (ht < 1) {
         document.getElementById("nb").style.backgroundColor = "#ff0000";
         farbe = "#ff0000";
         return 'mild';
+    }
+
+    const address = (person) => {
+        const { firstname, lastname, adress, postalCode, birthday, gender } = person;
+        return `Sehr ${gender} ${firstname} ${lastname}
+         <br> geboren am ${birthday}
+          <br> ${adress}, ${postalCode}`;
+    }
+
+    const pizzaBestellung = (pizza) => {
+        const { type, hotness, extras, additional } = pizza;
+        return `Sie haben folgende Pizza bestellt
+        <br> ${type} mit ${extras} and zusätzlich wollten Sie noch ${additional}
+        <br> Vielen Dank für Ihre Bestellung`;
     }
 }
