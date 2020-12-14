@@ -20,28 +20,31 @@ const toping = () => {
 };
 
 // Schaerfe der Pizza 🥵
-const hotness = (wert) => {
+const hotness = () => {
 
-    let breite = 500;
-    let reale_breite = (breite / 100) * wert;
+    const schaerfe = 1;
 
-    wert = Number(wert);
+    let out = '';
 
-    const ht = wert / 4;
+    switch (schaerfe) {
+        case 1:
+            out = 'mild';
+            break;
 
-    if (ht > 3) {
-        farbe = "#00ff00";
-        return 'tödlich scharf';
-    } else if (ht > 3 && ht < 2) {
-        farbe = "#ffff00";
-        return 'scharf';
-    } else if (ht > 1 && ht < 2) {
-        farbe = "#ff8000";
-        return 'relativ scharf';
-    } else if (ht < 1) {
-        farbe = "#ff0000";
-        return 'mild';
+        case 2:
+            out = 'bischen scharf';
+            break;
+
+        case 3:
+            out = 'scharf';
+            break;
+
+        case 4:
+            out = 'tödlich scharf!';
+            break;
     }
+
+    return out;
 }
 
 // Personen Objekt mit allen Attributen der Bestellung 🕺
@@ -75,6 +78,7 @@ const pizzaBestellung = (pizza) => {
     const { type, hotness, extras, additional } = pizza;
     return `Sie haben folgende Pizza bestellt
         <br> ${type} mit ${extras} and zusätzlich wollten Sie noch ${additional}
+        <br> Die Pizza sollte ${hotness} sein.
         <br> Vielen Dank für Ihre Bestellung!`;
 }
 
@@ -91,7 +95,7 @@ const pizzaBestellung = (pizza) => {
     // 🍕
     pizza.type = 'Margraitha';
     pizza.extras = ['Yes'];
-    pizza.hotness = hotness(75);
+    pizza.hotness = hotness();
     pizza.additional = ['Käse', 'Tomato'];
 
     // 🔙
