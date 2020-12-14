@@ -22,33 +22,26 @@ const toping = () => {
 // Schaerfe der Pizza 🥵
 const hotness = (wert) => {
 
-    let breite = 500;
-    let reale_breite = (breite / 100) * wert;
-
-    document.getElementById("colour").style.width = reale_breite + "px";
-
     document.getElementById("hotness").value = wert;
-
-    document.getElementById("hotnessNumber").value = wert;
 
     wert = Number(wert);
 
     const ht = wert / 4;
 
     if (ht > 3) {
-        document.getElementById("colour").style.backgroundColor = "#00ff00";
+        document.getElementById("out").style.backgroundColor = "#00ff00";
         farbe = "#00ff00";
         return 'tödlich scharf';
     } else if (ht > 3 && ht < 2) {
-        document.getElementById("colour").style.backgroundColor = "#ffff00";
+        document.getElementById("out").style.backgroundColor = "#ffff00";
         farbe = "#ffff00";
         return 'scharf';
     } else if (ht > 1 && ht < 2) {
-        document.getElementById("colour").style.backgroundColor = "#ff8000";
+        document.getElementById("out").style.backgroundColor = "#ff8000";
         farbe = "#ff8000";
         return 'relativ scharf';
     } else if (ht < 1) {
-        document.getElementById("colour").style.backgroundColor = "#ff0000";
+        document.getElementById("out").style.backgroundColor = "#ff0000";
         farbe = "#ff0000";
         return 'mild';
     }
@@ -67,7 +60,7 @@ const person = {
 // Pizza Objekt mit allen Attributen der Bestellung 🍕
 const pizza = {
     type: 'Margaritha',
-    hotness: 1,
+    hotness: 'mild',
     extras: ['Käse', 'Soße'],
     additional: 'Viel Käse'
 }
@@ -85,25 +78,27 @@ const pizzaBestellung = (pizza) => {
     const { type, hotness, extras, additional } = pizza;
     return `Sie haben folgende Pizza bestellt
         <br> ${type} mit ${extras} and zusätzlich wollten Sie noch ${additional}
-        <br> Vielen Dank für Ihre Bestellung`;
+        <br> Die Pizza sollte ${hotness}
+        <br> Vielen Dank für Ihre Bestellung!`;
 }
 
 // Funktion zur Rueckgabe aller Infos der Bestellung an den Nutzer 🔙
 function output() {
     // Person 🕺
-    person.firstname = document.getElementById("vname");
-    person.lastname = document.getElementById("nname");
-    person.adress = document.getElementById("adress");
-    person.postalCode = document.getElementById("post");
-    person.birthday = document.getElementById("birthday")
-    person.gender = gender(document.getElementById("gender"));
+    person.firstname = window.document.bform.vname.value;
+    person.lastname = window.document.bform.nname.value;
+    person.adress = window.document.bform.adress.value;
+    person.postalCode = window.document.bform.post.value;
+    person.birthday = window.document.bform.birthday.value;
+    person.gender = gender(window.document.bform.gender.value);
 
     // 🍕
-    pizza.type = document.getElementById("type");
+    let typePizza = window.document.bform.pizzaType;
+    pizza.type = typePizza.options[typePizza.selectedIndex].text;
     pizza.extras = toping();
     pizza.hotness = hotness(document.getElementById("hotness"));
-    pizza.additional = document.getElementById("wishes");
+    pizza.additional = document.getElementById("wishes").value;
 
     // 🔙
-    document.getElementById("id").innerHTML = address(person) + pizzaBestellung(pizza);
+    document.getElementById("out").innerHTML = address(person) + pizzaBestellung(pizza);
 };

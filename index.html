@@ -16,45 +16,46 @@
 
 <body>
     <fieldset>
-        <legend>Persönliche und Adressdaten</legend>
-        <div class="col1">
-            <!-- Adressdaten 📋 -->
+        <form name="bform">
+            <legend>Persönliche und Adressdaten</legend>
+            <div class="col1">
+                <!-- Adressdaten 📋 -->
 
-            <!-- Vorname ⏩ -->
-            <label for="vname">Vorname</label>
-            <input type="text" name="vname" id="vname" value="" placeholder="Geben Sie hier Ihren Vornamen ein">
-            <br>
+                <!-- Vorname ⏩ -->
+                <label for="vname">Vorname</label>
+                <input type="text" name="vname" id="vname" value="" placeholder="Geben Sie hier Ihren Vornamen ein">
+                <br>
 
-            <!-- Nachname ⏮ -->
-            <label for="nname">Nachname</label>
-            <input type="text" name="nname" id="nname" value="" placeholder="Geben Sie hier Ihren Nachnamen ein">
-            <br>
+                <!-- Nachname ⏮ -->
+                <label for="nname">Nachname</label>
+                <input type="text" name="nname" id="nname" value="" placeholder="Geben Sie hier Ihren Nachnamen ein">
+                <br>
 
-            <!-- Adresse 🏠 -->
-            <label for="adress">Adresse</label>
-            <input type="text" name="adress" id="adress" value="" placeholder="Geben Sie hier Ihre Adresse ein">
-            <br>
+                <!-- Adresse 🏠 -->
+                <label for="adress">Adresse</label>
+                <input type="text" name="adress" id="adress" value="" placeholder="Geben Sie hier Ihre Adresse ein">
+                <br>
 
-            <!-- Postleitzahl 🌆 -->
-            <label for="post">Postleitzahl</label>
-            <input type="number" name="post" id="post" value="" placeholder="Geben Sie hier Ihren Postleitzahl ein">
-        </div>
+                <!-- Postleitzahl 🌆 -->
+                <label for="post">Postleitzahl</label>
+                <input type="number" name="post" id="post" value="" placeholder="Geben Sie hier Ihren Postleitzahl ein">
+            </div>
 
-        <div class="col2">
-            <!-- Persönliche Daten 🔐 -->
+            <div class="col2">
+                <!-- Persönliche Daten 🔐 -->
 
-            <!-- Geburtstag 🎂 -->
-            <label for="birthday">Geburtsdatum</label>
-            <input type="date" name="birthday" id="birthdayra">
-            <br>
+                <!-- Geburtstag 🎂 -->
+                <label for="birthday">Geburtsdatum</label>
+                <input type="date" name="birthday" id="birthdayra">
+                <br>
 
-            <!-- Geschlecht 👩🏻‍🤝‍🧑🏽 -->
-            <label>Geschlecht:</label>
-            <input type="radio" name="gender" id="radio" value="m">
-            <label for="radio">M</label>
-            <input type="radio" name="gender" id="radio" value="w">
-            <label for="radio">W</label>
-        </div>
+                <!-- Geschlecht 👩🏻‍🤝‍🧑🏽 -->
+                <label>Geschlecht:</label>
+                <input type="radio" name="gender" id="radio" value="m">
+                <label for="radio">M</label>
+                <input type="radio" name="gender" id="radio" value="w">
+                <label for="radio">W</label>
+            </div>
     </fieldset>
 
     <fieldset>
@@ -106,7 +107,7 @@
             <br>
             <input type="range" name="hotness" id="hotness" value="0">
             <br>
-            <input type="number" name="hotnessNumber" id="hotnessNumber" placeholder="schärfe">
+            <input type="number" name="hotness" id="hotness" placeholder="schärfe">
         </div>
 
         <div class="col4">
@@ -125,9 +126,13 @@
 
     <br>
 
-    <div id="out">
-        Ausgabe
-    </div>
+    <fieldset>
+        <legend>Bestell Übersicht</legend>
+        <div id="out">
+            Ausgabe
+        </div>
+        </form>
+    </fieldset>
 
     <script language="JavaScript" type="text/javascript" src="app.js"></script>
 </body>
