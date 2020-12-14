@@ -3,12 +3,12 @@ const gender = (gender) => gender == 'm' ? 'geehrter Herr 🤵' : ' geehrte Frau
 
 // Extra Zutaten fuer die Pizza 🍅
 const toping = () => {
-    const cheese = document.querySelector('#cheese:checked') ? 'Käse' : '';
-    const tomato = document.querySelector('#tomato:checked') ? 'Tomaten' : '';
-    const sauce = document.querySelector('#sauce:checked') ? 'extra Soße' : '';
-    const ananas = document.querySelector('#ananas:checked') ? 'Ananas' : '';
-    const egg = document.querySelector('#egg:checked') ? 'Ei' : '';
-    const corn = document.querySelector('#corn:checked') ? 'Mais' : '';
+    const cheese = document.querySelector('#cheese:checked') ? 'Käse 🧀' : '';
+    const tomato = document.querySelector('#tomato:checked') ? 'Tomaten 🍅' : '';
+    const sauce = document.querySelector('#sauce:checked') ? 'extra Soße 🍝' : '';
+    const ananas = document.querySelector('#ananas:checked') ? 'Ananas 🍍' : '';
+    const egg = document.querySelector('#egg:checked') ? 'Ei 🥚' : '';
+    const corn = document.querySelector('#corn:checked') ? 'Mais 🌽' : '';
 
     const tp = [cheese, tomato, sauce, ananas, egg, corn];
     let out = '';
@@ -19,9 +19,13 @@ const toping = () => {
         }
     }
 
+    // Letzte Komma der Extras wird mit einem "und" ersetzt 🔁
     out = out.slice(0, out.length - 2);
+    const lastComma = out.lastIndexOf(',');
+    let andRepl = out.substr(lastComma);
+    andRepl = andRepl.substr(1, andRepl.length - 1);
 
-    return out;
+    return out.substr(0, lastComma) + ' und ' + andRepl;
 };
 
 // Schaerfe der Pizza 🥵
@@ -87,7 +91,7 @@ const pizzaBestellung = (pizza) => {
     return `Sie haben folgende Pizza 🍕 bestellt:
         <br> ${type} mit ${extras} and zusätzlich wollten Sie noch ${additional}
         <br> Die Pizza sollte ${hotness} sein.
-        <br><br> Vielen Dank für Ihre Bestellung!`;
+        <br><br> Vielen Dank für Ihre Bestellung! 🤙`;
 }
 
 // Funktion zur Rueckgabe aller Infos der Bestellung an den Nutzer 🔙

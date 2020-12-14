@@ -20,9 +20,15 @@ const gender = (gender) => gender == 'm' ? 'geehrter Herr' : ' geehrte Frau';
     }
 
     out = out.slice(0, out.length - 2);
+    const lastComma = out.lastIndexOf(',');
+    let andRepl = out.substr(lastComma);
+    andRepl = andRepl.substr(1, andRepl.length - 1);
+
+    console.log(out.substr(0, lastComma) + ' und ' + andRepl);
 
     console.log(out);
-    console.log(tp.length);
+    console.log(andRepl);
+    console.log(lastComma);
 })();
 
 // Schaerfe der Pizza 🥵
