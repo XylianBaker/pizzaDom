@@ -22,29 +22,7 @@ const toping = () => {
 // Schaerfe der Pizza 🥵
 const hotness = (wert) => {
 
-    document.getElementById("hotness").value = wert;
-
-    wert = Number(wert);
-
-    const ht = wert / 4;
-
-    if (ht > 3) {
-        document.getElementById("out").style.backgroundColor = "#00ff00";
-        farbe = "#00ff00";
-        return 'tödlich scharf';
-    } else if (ht > 3 && ht < 2) {
-        document.getElementById("out").style.backgroundColor = "#ffff00";
-        farbe = "#ffff00";
-        return 'scharf';
-    } else if (ht > 1 && ht < 2) {
-        document.getElementById("out").style.backgroundColor = "#ff8000";
-        farbe = "#ff8000";
-        return 'relativ scharf';
-    } else if (ht < 1) {
-        document.getElementById("out").style.backgroundColor = "#ff0000";
-        farbe = "#ff0000";
-        return 'mild';
-    }
+    document.getElementById("
 }
 
 // Personen Objekt mit allen Attributen der Bestellung 🕺
@@ -95,7 +73,7 @@ function output() {
     // 🍕
     let typePizza = window.document.bform.pizzaType;
     pizza.type = typePizza.options[typePizza.selectedIndex].text;
-    pizza.extras = toping();
+    pizza.extras = toping(window.document.bform.hotness.value);
     pizza.hotness = hotness(document.getElementById("hotness"));
     pizza.additional = document.getElementById("wishes").value;
 
